@@ -1,0 +1,17 @@
+services:
+  api:
+    build: .
+    container_name: manager_library_api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    networks:
+      - library_network
+
+networks:
+  library_network:
+    external: true
+    name: test-manager-library-3239188-infra_default
+    
